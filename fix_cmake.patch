@@ -1,0 +1,46 @@
+commit 309c0d74d210e77635d8b3d6189dffae887380df
+Author: Pino Toscano <pino@kde.org>
+Date:   Wed Feb 15 22:51:42 2023 +0100
+
+    Revert "cmake issue"
+    
+    It is not clear what this commit is supposed to do by hardcoding two
+    variables:
+    - CMAKE_PREFIX_PATH is supposed to be set by the user running cmake to
+      point to all the prefixes with installed software to find -- i.e. the
+      equivalent of CMAKE_INSTALL_PREFIX (cmake), --prefix (autoconf), etc;
+      because of that, hardcoding it (even with a Debian/amd64-specific
+      path) is not a good idea
+    - CMAKE_LIBRARY_ARCHITECTURE represents the architecture for the
+      libraries in a multiarch/multilib setup: cmake will detect and set it
+      automatically according to the target system; hardcoding it is hence
+      very wrong, and makes the build fail on any non-Debian/amd64 system
+    
+    Considering that the commit itself has no description of why it was
+    done, and that it causes build regressions, revert it.
+    
+    This reverts commit 087948e1ba8673cbf7cc8a7b2b5ec00e5d0d0e90.
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a1a9011de..8b3a08315 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,16 +8,8 @@ set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+ PROJECT(skrooge)
+ 
+ 
+-SET(QT_MIN_VERSION "5.12.0")
+-IF (CMAKE_PREFIX_PATH)
+-ELSE (CMAKE_PREFIX_PATH)
+-    SET(CMAKE_PREFIX_PATH "/usr/lib/x86_64-linux-gnu/cmake")
+-ENDIF  (CMAKE_PREFIX_PATH)
+-IF (CMAKE_LIBRARY_ARCHITECTURE)
+-ELSE (CMAKE_LIBRARY_ARCHITECTURE)
+-    SET(CMAKE_LIBRARY_ARCHITECTURE "x86_64-linux-gnu")
+-ENDIF (CMAKE_LIBRARY_ARCHITECTURE)
+-MESSAGE( STATUS "     CMAKE_LIBRARY_ARCHITECTURE   :  " ${CMAKE_LIBRARY_ARCHITECTURE})
++SET (QT_MIN_VERSION "5.12.0")
++#SET (QT_MIN_VERSION "5.15.0")
+ 
+ # QT6 MIGRATION
+ #add_compile_definitions(QT_DISABLE_DEPRECATED_BEFORE=0x050F00)
