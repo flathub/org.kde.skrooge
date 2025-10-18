@@ -74,8 +74,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/sqlcipher/sqlcipher/archive/v4.6.1.tar.gz",
-                    "sha256": "d8f9afcbc2f4b55e316ca4ada4425daf3d0b4aab25f45e11a802ae422b9f53a3",
+                    "url": "https://github.com/sqlcipher/sqlcipher/archive/v4.11.0.tar.gz",
+                    "sha256": "bfa85505001dfb6c7f4ab532a39af0ed11d255cd11763bb070d6bb6ac6739a64",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 11213,
@@ -199,8 +199,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/skrooge/skrooge-25.4.0.tar.xz",
-                    "sha256": "1cdba2fd28c237d2d6c54c470da7b9f67e6a3c8c185875f5b854a5567c0194bf",
+                    "url": "https://download.kde.org/stable/skrooge/skrooge-25.10.0.tar.xz",
+                    "sha256": "9040968b9feadab7813acf43aee6cecf956897702403b957cce2ed6e0c761e51",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 4826,
