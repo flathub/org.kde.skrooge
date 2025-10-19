@@ -2,10 +2,10 @@
     "id": "org.kde.skrooge",
     "default-branch": "stable",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-24.08",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-24.08",
+    "base-version": "6.9",
     "command": "skrooge",
     "rename-icon": "skrooge",
     "copy-icon": true,
@@ -99,23 +99,6 @@
             ]
         },
         {
-            "name": "grantlee",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/steveire/grantlee/archive/v5.3.1.tar.gz",
-                    "sha256": "ba288ae9ed37ec0c3622ceb40ae1f7e1e6b2ea89216ad8587f0863d64be24f06",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 21448,
-                        "stable-only": true,
-                        "url-template": "https://github.com/steveire/grantlee/archive/v$version.tar.gz"
-                    }
-                }
-            ]
-        },
-        {
             "name": "opensp",
             "rm-configure": true,
             "config-opts": [
@@ -199,8 +182,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.kde.org/stable/skrooge/skrooge-25.4.0.tar.xz",
-                    "sha256": "1cdba2fd28c237d2d6c54c470da7b9f67e6a3c8c185875f5b854a5567c0194bf",
+                    "url": "https://download.kde.org/stable/skrooge/skrooge-25.10.0.tar.xz",
+                    "sha256": "9040968b9feadab7813acf43aee6cecf956897702403b957cce2ed6e0c761e51",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 4826,
