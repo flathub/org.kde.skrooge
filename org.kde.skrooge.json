@@ -61,7 +61,7 @@
         {
             "name": "sqlcipher",
             "config-opts": [
-                "--enable-tempstore=yes",
+                "--with-tempstore=yes",
                 "--disable-tcl"
             ],
             "build-options": {
