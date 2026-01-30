@@ -12,12 +12,14 @@
     "cleanup": [
         "/include",
         "/lib/pkgconfig",
-        "/lib/*.a",
-        "/lib/*.la",
-        "/share/man"
+        "/share/doc",
+        "/share/man",
+        "*.la",
+        "*.a"
     ],
     "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
+        "/app/cleanup-BaseApp.sh",
+        "python3 -m compileall --invalidation-mode=unchecked-hash /app/share/skrooge"
     ],
     "finish-args": [
         "--device=dri",
